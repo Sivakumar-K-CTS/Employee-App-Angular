@@ -11,6 +11,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { EmployeeViewComponent } from './components/employee-view/employee-view.component';
 import { EmployeeDetailsViewComponent } from './components/employee-details-view/employee-details-view.component';
 import { AddUpdateComponent } from './components/add-update/add-update.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,9 +25,9 @@ import { AddUpdateComponent } from './components/add-update/add-update.component
     AuthModule,
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
-    MaterialModule,
-    BrowserAnimationsModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

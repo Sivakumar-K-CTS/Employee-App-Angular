@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Employee } from 'src/app/model/employee';
 
 @Component({
   selector: 'app-employee-details-view',
@@ -10,6 +11,7 @@ export class EmployeeDetailsViewComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+   
   }
 
 }

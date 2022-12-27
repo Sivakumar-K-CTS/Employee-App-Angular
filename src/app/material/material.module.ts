@@ -7,7 +7,7 @@ import { MatIconModule} from '@angular/material/icon';
 import { MatTabsModule} from '@angular/material/tabs';
 import { MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule} from '@angular/material/form-field';
-
+import {MatTableModule} from '@angular/material/table';
 
 
 
@@ -16,14 +16,13 @@ import { MatFormFieldModule} from '@angular/material/form-field';
   declarations: [],
   imports: [
     CommonModule,
-    
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
     MatTabsModule,
     MatInputModule,
-    MatFormFieldModule
-
+    MatFormFieldModule,
+    MatTableModule
   ],
   exports: [
     CommonModule,
@@ -34,7 +33,8 @@ import { MatFormFieldModule} from '@angular/material/form-field';
     MatIconModule,
     MatTabsModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTableModule
   ]
 })
 export class MaterialModule { }

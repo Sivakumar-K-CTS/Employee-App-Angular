@@ -14,12 +14,12 @@ import { AuthService } from './service/auth.service';
     KeycloakAngularModule
   ],
   providers: [
-    // {
-    //   provide: APP_INITIALIZER,
-    //   useFactory: initializer,
-    //   multi: true,
-    //   deps: [KeycloakService]
-    // },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializer,
+      multi: true,
+      deps: [KeycloakService]
+    },
     AuthGuard,
     AuthService
   ]

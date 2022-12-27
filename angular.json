@@ -64,7 +64,8 @@
               "browserTarget": "employee-app-angular:build:production"
             },
             "development": {
-              "browserTarget": "employee-app-angular:build:development"
+              "browserTarget": "employee-app-angular:build:development",
+              "proxyConfig": "src/proxy.config.json"
             }
           },
           "defaultConfiguration": "development"
