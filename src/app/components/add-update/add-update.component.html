@@ -1,1 +1,138 @@
-<p>add-update works!</p>
+<form [formGroup]="employee">
+    <mat-form-field appearance="fill">
+        <mat-label>Enter Id:</mat-label>
+        <input type="text" matInput formControlName="employeeId">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter First Name:</mat-label>
+        <input type="text" matInput formControlName="firstName">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Last Name:</mat-label>
+        <input type="text" matInput formControlName="lastName">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter gender:</mat-label>
+        <input type="text" matInput formControlName="gender">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Data of Birth:</mat-label>
+        <input matInput [matDatepicker]="picker" matInput formControlName="dateOfBirth">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br>
+    <br>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Mobile Number:</mat-label>
+        <input type="number" matInput formControlName="mobile">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Email</mat-label>
+        <input type="number" matInput formControlName="email">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>designation:</mat-label>
+        <mat-select>
+          <mat-option value="one">Sr. Manager</mat-option>
+          <mat-option value="two">Jr. Manager</mat-option>
+          <mat-option value="three">HR</mat-option>
+          <mat-option value="four">Tech. Lead</mat-option>
+          <mat-option value="five">MYSTERY</mat-option>
+          <mat-option value="six">THRILLER</mat-option>
+          <mat-option value="seven">Love</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Type:</mat-label>
+        <mat-select>
+          <mat-option value="one">AUTOBIOGRAPHY</mat-option>
+          <mat-option value="two">BIOGRAPHY</mat-option>
+          <mat-option value="three">ESSAYS</mat-option>
+          <mat-option value="four">SELFHELP</mat-option>
+          <mat-option value="five">CHILDRENSBOOKS</mat-option>
+          <mat-option value="six">WAR</mat-option>
+          <mat-option value="seven">TEXTBOOKS</mat-option>
+          <mat-option value="eight">POLITICALBOOK</mat-option>
+          <mat-option value="nine">ACADAMICBOOKS</mat-option>
+          <mat-option value="ten">POETRYBOOKS</mat-option>
+          <mat-option value="eleven">COOKBOOKS</mat-option>
+          <mat-option value="twelve">HISTORYBOOKS</mat-option>
+          <mat-option value="thirteen">ARTBOOKS</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Rating:</mat-label>
+        <input type="number" matInput formControlName="rating">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Discount:</mat-label>
+        <input type="number" matInput formControlName="discount">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter PaparQuality:</mat-label>
+        <input type="number" matInput formControlName="paperQuality">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter BookSize:</mat-label>
+        <input type="number" matInput formControlName="bookSize">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Language:</mat-label>
+        <input type="text" matInput formControlName="language">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Editor:</mat-label>
+        <input type="text" matInput formControlName="editor">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Publisher:</mat-label>
+        <input type="text" matInput formControlName="publisher">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Edition</mat-label>
+        <input type="number" matInput formControlName="edition">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Publish date:</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Manufacture date:</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter pages:</mat-label>
+        <input type="number" matInput formControlName="pages">
+    </mat-form-field>
+    </form>
+
+
+'designation', 'role', 'department', 'reportingOfficerName', 'reportingOfficerId', 'experience', 'salary', 'dateOfJoining', 'promotionBand', 'workingMode', 'address', 'branchLocation', 'projectName', 'assignmentStartDate', 'assignmentEndDate'  
+

@@ -8,8 +8,8 @@ import { EmployeeViewComponent } from './components/employee-view/employee-view.
 const routes: Routes = [
   {path:'',redirectTo:'employee-view',pathMatch:'full'},
   {path:'employee-view',component:EmployeeViewComponent, canActivate:[AuthGuard],data:{roles:["manager","admin","employee"]}},
-  {path:'add-employee',component:AddUpdateComponent, canActivate:[AuthGuard],data:{roles:["manager"]}},
-  {path:'employee-details',component:EmployeeDetailsViewComponent, canActivate:[AuthGuard],data:{roles:["manager","admin","employee"]}}
+  {path:'add-employee',component:AddUpdateComponent, canActivate:[AuthGuard],data:{roles:["admin"]}},
+  {path:'employee-details/:id',component:EmployeeDetailsViewComponent, canActivate:[AuthGuard],data:{roles:["manager","admin","employee"]}}
 ];
 
 @NgModule({

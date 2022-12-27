@@ -12,7 +12,9 @@ type EmployeeResponse={
 
 export class EmployeeService {
 
-  private _getUrl = "/api/employee-api/employee";
+  private _getListUrl = "/api/employee-api/employee";
+  private _getByIdUrl = "/api/employee-api/employee";
+
 
   constructor(private _httpClient:HttpClient) {
     console.log("Creating an instance of Product Service");
@@ -26,6 +28,9 @@ export class EmployeeService {
 
   employees:Employee[]=[]
   getEmployee(){
-    return this._httpClient.get<EmployeeResponse>(this._getUrl);
+    return this._httpClient.get<EmployeeResponse>(this._getListUrl);
+  }
+  getEmployeeById(empId:string){
+    return this._httpClient.get<Employee>(this._getByIdUrl+"/"+empId);
   }
 }

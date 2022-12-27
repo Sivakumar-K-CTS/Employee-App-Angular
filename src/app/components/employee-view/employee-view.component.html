@@ -1,122 +1,144 @@
 <h3>List of Employee</h3>
+<mat-icon aria-hidden="false" aria-label="Example home icon" (click)="addEmployee()">person_add</mat-icon>
+  
+  
+  
+  
+  
 
-<table mat-table [dataSource]="employeeList">
-  <ng-container matColumnDef="employeeId">
+<button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <mat-icon>border_all</mat-icon>
+</button>
+
+<table mat-table [dataSource]="employeeList" class="mat-elevation-z8">
+ 
+  <ng-container matColumnDef="employeeId" > -->
     <th mat-header-cell *matHeaderCellDef>Employee ID</th>
-    <td mat-cell *matCellDef="let element"> {{element.employeeId}} </td>
+    <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.employeeId}}</td>
   </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="firstName">
     <th mat-header-cell *matHeaderCellDef> First Name </th>
-    <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+    <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.firstName}} </td>
   </ng-container>
 
 
   <ng-container matColumnDef="lastName">
     <th mat-header-cell *matHeaderCellDef> Last Name </th>
-    <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+    <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.lastName}} </td>
   </ng-container>
 
   <ng-container matColumnDef="gender">
     <th mat-header-cell *matHeaderCellDef> Gender </th>
-    <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+    <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.gender}} </td>
   </ng-container>
 
   <ng-container matColumnDef="dateOfBirth">
     <th mat-header-cell *matHeaderCellDef> DateOfBirth </th>
-    <td mat-cell *matCellDef="let element"> {{element.dateOfBirth}} </td>
+    <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.dateOfBirth}} </td>
   </ng-container>
 
   <ng-container matColumnDef="mobile">
     <th mat-header-cell *matHeaderCellDef> Mobile </th>
-    <td mat-cell *matCellDef="let element"> {{element.mobile}} </td>
+    <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.mobile}} </td>
   </ng-container>
 
   <ng-container matColumnDef="email">
     <th mat-header-cell *matHeaderCellDef> Email </th>
-    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.email}} </td>
   </ng-container>
 
   <ng-container matColumnDef="designation">
     <th mat-header-cell *matHeaderCellDef> Designation </th>
-    <td mat-cell *matCellDef="let element"> {{element.designation}} </td>
+    <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.designation}} </td>
   </ng-container>
 
   <ng-container matColumnDef="role">
     <th mat-header-cell *matHeaderCellDef> Role </th>
-    <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+    <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.role}} </td>
   </ng-container>
 
   <ng-container matColumnDef="department">
     <th mat-header-cell *matHeaderCellDef> department </th>
-    <td mat-cell *matCellDef="let element"> {{element.department}} </td>
+    <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.department}} </td>
   </ng-container>
 
   <ng-container matColumnDef="reportingOfficerName">
     <th mat-header-cell *matHeaderCellDef> reportingOfficerName </th>
-    <td mat-cell *matCellDef="let element"> {{element.reportingOfficerName}} </td>
+    <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.reportingOfficerName}} </td>
   </ng-container>
 
   
 	<ng-container matColumnDef="reportingOfficerId">
         <th mat-header-cell *matHeaderCellDef> reportingOfficerId </th>
-        <td mat-cell *matCellDef="let element"> {{element.reportingOfficerId}} </td>
+        <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.reportingOfficerId}} </td>
       </ng-container>
 
     
 	<ng-container matColumnDef="experience">
         <th mat-header-cell *matHeaderCellDef> experience </th>
-        <td mat-cell *matCellDef="let element"> {{element.experience}} </td>
+        <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.experience}} </td>
       </ng-container>
 
       <ng-container matColumnDef="salary">
         <th mat-header-cell *matHeaderCellDef> salary </th>
-        <td mat-cell *matCellDef="let element"> {{element.salary}} </td>
+        <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.salary}} </td>
       </ng-container>
 
       <ng-container matColumnDef="dateOfJoining">
         <th mat-header-cell *matHeaderCellDef> dateOfJoining </th>
-        <td mat-cell *matCellDef="let element"> {{element.dateOfJoining}} </td>
+        <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.dateOfJoining}} </td>
       </ng-container>
 
       <ng-container matColumnDef="promotionBand">
         <th mat-header-cell *matHeaderCellDef> promotionBand </th>
-        <td mat-cell *matCellDef="let element"> {{element.promotionBand}} </td>
+        <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.promotionBand}} </td>
       </ng-container>
 
       
       <ng-container matColumnDef="workingMode">
         <th mat-header-cell *matHeaderCellDef> workingMode </th>
-        <td mat-cell *matCellDef="let element"> {{element.workingMode}} </td>
+        <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.workingMode}} </td>
       </ng-container>
 
       <ng-container matColumnDef="address">
         <th mat-header-cell *matHeaderCellDef> address </th>
-        <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+        <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.address}} </td>
       </ng-container>
 
       <ng-container matColumnDef="branchLocation">
         <th mat-header-cell *matHeaderCellDef> branchLocation </th>
-        <td mat-cell *matCellDef="let element"> {{element.branchLocation}} </td>
+        <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.branchLocation}} </td>
       </ng-container>
 
       <ng-container matColumnDef="projectName">
         <th mat-header-cell *matHeaderCellDef> projectName </th>
-        <td mat-cell *matCellDef="let element"> {{element.projectName}} </td>
+        <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.projectName}} </td>
       </ng-container>
 
       <ng-container matColumnDef="assignmentStartDate">
         <th mat-header-cell *matHeaderCellDef> assignmentStartDate</th>
-        <td mat-cell *matCellDef="let element"> {{element.assignmentStartDate}} </td>
+        <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.assignmentStartDate}} </td>
       </ng-container>
 
       <ng-container matColumnDef="assignmentEndDate">
         <th mat-header-cell *matHeaderCellDef> assignmentEndDate</th>
-        <td mat-cell *matCellDef="let element"> {{element.assignmentEndDate}} </td>
+        <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.assignmentEndDate}} </td>
       </ng-container>
-
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
 </table>
+
+<ul >
+  <li  *ngFor = "let employee of employeeList" [ngStyle]="{'float':'left','width':'250px', 'text-align':'center'}" >
+     
+      {{employee.employeeId}}<br>
+      {{employee.firstName}}<br>
+     
+  </li>
+</ul>
+
+
 

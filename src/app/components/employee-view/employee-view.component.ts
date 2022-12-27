@@ -1,5 +1,6 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Employee } from 'src/app/model/employee';
 import { EmployeeService } from 'src/app/services/employee.service';
 
@@ -11,12 +12,17 @@ import { EmployeeService } from 'src/app/services/employee.service';
 export class EmployeeViewComponent{
 
 
-  constructor(private _empService:EmployeeService) {
+  constructor(private _empService:EmployeeService, private _router:Router) {
    }
 
   employeeList:Employee[]=[];
   displayedColumns: string[] = ['employeeId', 'firstName', 'lastName', 'gender', 'dateOfBirth', 'mobile', 'email', 'designation', 'role', 'department', 'reportingOfficerName', 'reportingOfficerId', 'experience', 'salary', 'dateOfJoining', 'promotionBand', 'workingMode', 'address', 'branchLocation', 'projectName', 'assignmentStartDate', 'assignmentEndDate'];
  
+  @Output()
+  public selection: EventEmitter<string> = new EventEmitter<string>();
+
+  viewModifier = 1;
+
   ngOnInit(): void {
     this._empService.getEmployee().subscribe({
       next:(data)=>{
@@ -36,7 +42,16 @@ export class EmployeeViewComponent{
 
   }
 
-  
+  temp!:Employee;
+
+  showDetails(employee:Employee){
+    this.temp=employee
+    this._router.navigate(['/employee-details',employee.employeeId])
+  }
+
+  addEmployee(){
+    this._router.navigate(['/add-employee'])
+  }
   
 
   
