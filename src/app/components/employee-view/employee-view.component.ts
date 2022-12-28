@@ -1,8 +1,10 @@
 
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/service/auth.service';
 import { Employee } from 'src/app/model/employee';
 import { EmployeeService } from 'src/app/services/employee.service';
+import { AuthGuard } from 'src/app/auth/auth.guard';
 
 @Component({
   selector: 'app-employee-view',
@@ -12,7 +14,7 @@ import { EmployeeService } from 'src/app/services/employee.service';
 export class EmployeeViewComponent{
 
 
-  constructor(private _empService:EmployeeService, private _router:Router) {
+  constructor(private _authGuard:AuthGuard ,private _empService:EmployeeService, private _router:Router, private _authService:AuthService) {
    }
 
   employeeList:Employee[]=[];
@@ -42,15 +44,16 @@ export class EmployeeViewComponent{
 
   }
 
-  temp!:Employee;
-
   showDetails(employee:Employee){
-    this.temp=employee
     this._router.navigate(['/employee-details',employee.employeeId])
   }
 
   addEmployee(){
     this._router.navigate(['/add-employee'])
+  }
+
+  editPage(employeeId:string){
+    this._router.navigate(['/employee-details',employeeId])
   }
   
 

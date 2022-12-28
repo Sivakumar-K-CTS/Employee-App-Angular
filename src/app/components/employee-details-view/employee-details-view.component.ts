@@ -15,11 +15,12 @@ type EmployeeResponse={
 })
 export class EmployeeDetailsViewComponent implements OnInit {
 
-   employee!:Employee;
+  employee!:Employee;
   constructor(
     private _employeeService:EmployeeService ,private _activatedRoute: ActivatedRoute
   ) {
   }
+  
   employeeId:string='';
   ngOnInit(): void {
     this._activatedRoute.params.subscribe({

@@ -1,30 +1,31 @@
-<form [formGroup]="employee">
-    <mat-form-field appearance="fill">
+<form [formGroup]="employeeForm" (ngSubmit)="onAddEmployee(employeeForm)">
+    <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Enter Id:</mat-label>
-        <input type="text" matInput formControlName="employeeId">
+        <input type="text" matInput formControlName="employeeId" [(ngModel)]="employeeById.employeeId">
     </mat-form-field>
     <br>
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Enter First Name:</mat-label>
-        <input type="text" matInput formControlName="firstName">
+        <input type="text" matInput formControlName="firstName" [(ngModel)]="employeeById.firstName">
     </mat-form-field>
     <br>
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Enter Last Name:</mat-label>
-        <input type="text" matInput formControlName="lastName">
+        <input type="text" matInput formControlName="lastName" [(ngModel)]="employeeById.lastName">
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter gender:</mat-label>
-        <input type="text" matInput formControlName="gender">
-    </mat-form-field>
+    <mat-radio-group aria-label="Enter gender:"  matInput formControlName="gender" [(ngModel)]="employeeById.gender">
+        <mat-radio-button value="Male">Male</mat-radio-button>
+        <mat-radio-button value="Female">Female</mat-radio-button>
+    </mat-radio-group>
     <br>
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Data of Birth:</mat-label>
-        <input matInput [matDatepicker]="picker" matInput formControlName="dateOfBirth">
+        <input matInput [matDatepicker]="picker" matInput formControlName="dateOfBirth" [(ngModel)]="employeeById.dateOfBirth">
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
+        
     </mat-form-field>
     <br>
     <br>
@@ -36,103 +37,141 @@
     <br>
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Enter Email</mat-label>
-        <input type="number" matInput formControlName="email">
+        <input type="text" matInput formControlName="email">
     </mat-form-field>
     <br>
     <mat-form-field appearance="fill">
         <mat-label>designation:</mat-label>
-        <mat-select>
-          <mat-option value="one">Sr. Manager</mat-option>
-          <mat-option value="two">Jr. Manager</mat-option>
-          <mat-option value="three">HR</mat-option>
-          <mat-option value="four">Tech. Lead</mat-option>
-          <mat-option value="five">MYSTERY</mat-option>
-          <mat-option value="six">THRILLER</mat-option>
-          <mat-option value="seven">Love</mat-option>
+        <mat-select matInput formControlName="designation">
+          <mat-option value="jr. Employee">jr. Employee</mat-option>
+          <mat-option value="sr. Employee">sr. Employee</mat-option>
+          <mat-option value="Team Lead">Team Lead</mat-option>
+          <mat-option value="jr. Manager">jr. Manager</mat-option>
+          <mat-option value="sr. Manager">sr. Manager</mat-option>
+          <mat-option value="Admin">Admin</mat-option>
+          <mat-option value="HR">HR</mat-option>
         </mat-select>
       </mat-form-field>
       <br>
       <mat-form-field appearance="fill">
-        <mat-label>Type:</mat-label>
-        <mat-select>
-          <mat-option value="one">AUTOBIOGRAPHY</mat-option>
-          <mat-option value="two">BIOGRAPHY</mat-option>
-          <mat-option value="three">ESSAYS</mat-option>
-          <mat-option value="four">SELFHELP</mat-option>
-          <mat-option value="five">CHILDRENSBOOKS</mat-option>
-          <mat-option value="six">WAR</mat-option>
-          <mat-option value="seven">TEXTBOOKS</mat-option>
-          <mat-option value="eight">POLITICALBOOK</mat-option>
-          <mat-option value="nine">ACADAMICBOOKS</mat-option>
-          <mat-option value="ten">POETRYBOOKS</mat-option>
-          <mat-option value="eleven">COOKBOOKS</mat-option>
-          <mat-option value="twelve">HISTORYBOOKS</mat-option>
-          <mat-option value="thirteen">ARTBOOKS</mat-option>
+        <mat-label>Roles:</mat-label>
+        <mat-select matInput formControlName="role">
+          <mat-option value="Associate Software developer">Associate Software developer</mat-option>
+          <mat-option value="Software developer">Software developer</mat-option>
+          <mat-option value="sr. Developer">sr. Developer</mat-option>
+          <mat-option value="Tech. Architect">Tech. Architect</mat-option>
+          <mat-option value="Solution Architect">Solution Architect</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Department:</mat-label>
+        <mat-select matInput formControlName="role">
+          <mat-option value="Development">Development</mat-option>
+          <mat-option value="Testing">Testing</mat-option>
+          <mat-option value="Support">Support</mat-option>
+          <mat-option value="Management">Management</mat-option>
+          <mat-option value="Admnistration">Admnistration</mat-option>
         </mat-select>
       </mat-form-field>
       <br>
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter Rating:</mat-label>
-        <input type="number" matInput formControlName="rating">
+        <mat-label>Enter Reporting Officer Name:</mat-label>
+        <input type="text" matInput formControlName="reportingOfficerName">
     </mat-form-field>
     <br>
     <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter Discount:</mat-label>
-        <input type="number" matInput formControlName="discount">
+        <mat-label>Enter Reporting Officer Id:</mat-label>
+        <input type="number" matInput formControlName="reportingOfficerId">
     </mat-form-field>
     <br>
     <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter PaparQuality:</mat-label>
-        <input type="number" matInput formControlName="paperQuality">
+        <mat-label>Enter experience:</mat-label>
+        <input type="number" matInput formControlName="experience">
     </mat-form-field>
     <br>
     <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter BookSize:</mat-label>
-        <input type="number" matInput formControlName="bookSize">
+        <mat-label>Enter salary:</mat-label>
+        <input type="number" matInput formControlName="salary">
     </mat-form-field>
     <br>
     <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter Language:</mat-label>
-        <input type="text" matInput formControlName="language">
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter Editor:</mat-label>
-        <input type="text" matInput formControlName="editor">
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter Publisher:</mat-label>
-        <input type="text" matInput formControlName="publisher">
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter Edition</mat-label>
-        <input type="number" matInput formControlName="edition">
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Publish date:</mat-label>
-        <input matInput [matDatepicker]="picker">
+        <mat-label>Data of joining:</mat-label>
+        <input matInput [matDatepicker]="picker1" matInput formControlName="dateOfJoining">
         <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    <br>
+    <!-- <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter promotionBand:</mat-label>
+        <input type="text" matInput formControlName="promotionBand">
+    </mat-form-field> -->
+
+    <mat-radio-group aria-label="Promotion Band"  matInput formControlName="promotionBand">
+        <mat-radio-button value="A">A</mat-radio-button>
+        <mat-radio-button value="B">B</mat-radio-button>
+        <mat-radio-button value="C">C</mat-radio-button>
+        <mat-radio-button value="D">D</mat-radio-button>
+      </mat-radio-group>
+    <br>
+    <mat-radio-group aria-label="Mode of work"  matInput formControlName="workingMode">
+        <mat-radio-button value="Work From Office">Work From Office</mat-radio-button>
+        <mat-radio-button value="Work From Home">Work From Home</mat-radio-button>
+      </mat-radio-group>
+    <br>
+    <h3>Address</h3>
+    <div>
+        <form formGroupName="address">
+            <table class="example-full-width" cellspacing="0"><tr>
+                <td><mat-form-field class="example-full-width">
+                    <mat-label>Street</mat-label>
+                    <input matInput placeholder="Ex. 2-A West Street" formControlName="street">
+                  </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
+                  <mat-label>City</mat-label>
+                  <input matInput placeholder="Ex. San Francisco" formControlName="city">
+                </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
+                  <mat-label>State</mat-label>
+                  <input matInput placeholder="Ex. California" formControlName="state">
+                </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
+                  <mat-label>Postal Code</mat-label>
+                  <input matInput #postalCode maxlength="6" placeholder="Ex. 94105" value="94043" formControlName="pincode">
+                  <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+                </mat-form-field></td>
+              </tr></table>
+        </form>
+     </div>
+   
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Branch Location:</mat-label>
+        <input type="text" matInput formControlName="branchLocation">
     </mat-form-field>
     <br>
     <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Manufacture date:</mat-label>
-        <input matInput [matDatepicker]="picker">
+        <mat-label>Project Name:</mat-label>
+        <input type="text" matInput formControlName="projectName">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Assignment Start Date:</mat-label>
+        <input matInput [matDatepicker]="picker2" matInput formControlName="assignmentStartDate">
         <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
     </mat-form-field>
     <br>
     <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter pages:</mat-label>
-        <input type="number" matInput formControlName="pages">
+        <mat-label>Assignment End Date:</mat-label>
+        <input matInput [matDatepicker]="picker4" matInput formControlName="assignmentEndDate">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker4"></mat-datepicker-toggle>
+        <mat-datepicker #picker4></mat-datepicker>
     </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" >Add</button>
     </form>
-
-
-'designation', 'role', 'department', 'reportingOfficerName', 'reportingOfficerId', 'experience', 'salary', 'dateOfJoining', 'promotionBand', 'workingMode', 'address', 'branchLocation', 'projectName', 'assignmentStartDate', 'assignmentEndDate'  
-
+    <br>
+<button type="submit" mat-raised-button color="primary" (click)="backToHome()">Back</button>

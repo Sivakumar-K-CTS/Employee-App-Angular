@@ -9,6 +9,7 @@ const routes: Routes = [
   {path:'',redirectTo:'employee-view',pathMatch:'full'},
   {path:'employee-view',component:EmployeeViewComponent, canActivate:[AuthGuard],data:{roles:["manager","admin","employee"]}},
   {path:'add-employee',component:AddUpdateComponent, canActivate:[AuthGuard],data:{roles:["admin"]}},
+  {path:'update-employee/:id',component:AddUpdateComponent, canActivate:[AuthGuard],data:{roles:["admin","manager"]}},
   {path:'employee-details/:id',component:EmployeeDetailsViewComponent, canActivate:[AuthGuard],data:{roles:["manager","admin","employee"]}}
 ];
 
