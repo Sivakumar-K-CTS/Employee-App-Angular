@@ -1,46 +1,46 @@
 <form [formGroup]="employeeForm" (ngSubmit)="onAddEmployee(employeeForm)">
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter Id:</mat-label>
-        <input type="text" matInput formControlName="employeeId" [(ngModel)]="employeeById.employeeId">
+        <input type="text" matInput formControlName="employeeId">
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter First Name:</mat-label>
-        <input type="text" matInput formControlName="firstName" [(ngModel)]="employeeById.firstName">
+        <input type="text" matInput formControlName="firstName">
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter Last Name:</mat-label>
-        <input type="text" matInput formControlName="lastName" [(ngModel)]="employeeById.lastName">
+        <input type="text" matInput formControlName="lastName">
     </mat-form-field>
     <br>
-    <mat-radio-group aria-label="Enter gender:"  matInput formControlName="gender" [(ngModel)]="employeeById.gender">
+    <mat-radio-group aria-label="Enter gender:"  matInput formControlName="gender">
         <mat-radio-button value="Male">Male</mat-radio-button>
         <mat-radio-button value="Female">Female</mat-radio-button>
     </mat-radio-group>
     <br>
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Data of Birth:</mat-label>
-        <input matInput [matDatepicker]="picker" matInput formControlName="dateOfBirth" [(ngModel)]="employeeById.dateOfBirth">
+        <input matInput [matDatepicker]="picker" matInput formControlName="dateOfBirth">
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
-        
+
     </mat-form-field>
     <br>
     <br>
 
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter Mobile Number:</mat-label>
         <input type="number" matInput formControlName="mobile">
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter Email</mat-label>
         <input type="text" matInput formControlName="email">
     </mat-form-field>
     <br>
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="outline">
         <mat-label>designation:</mat-label>
         <mat-select matInput formControlName="designation">
           <mat-option value="jr. Employee">jr. Employee</mat-option>
@@ -53,7 +53,7 @@
         </mat-select>
       </mat-form-field>
       <br>
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Roles:</mat-label>
         <mat-select matInput formControlName="role">
           <mat-option value="Associate Software developer">Associate Software developer</mat-option>
@@ -64,9 +64,9 @@
         </mat-select>
       </mat-form-field>
       <br>
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Department:</mat-label>
-        <mat-select matInput formControlName="role">
+        <mat-select matInput formControlName="department">
           <mat-option value="Development">Development</mat-option>
           <mat-option value="Testing">Testing</mat-option>
           <mat-option value="Support">Support</mat-option>
@@ -75,27 +75,27 @@
         </mat-select>
       </mat-form-field>
       <br>
-      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter Reporting Officer Name:</mat-label>
         <input type="text" matInput formControlName="reportingOfficerName">
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter Reporting Officer Id:</mat-label>
         <input type="number" matInput formControlName="reportingOfficerId">
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter experience:</mat-label>
         <input type="number" matInput formControlName="experience">
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter salary:</mat-label>
         <input type="number" matInput formControlName="salary">
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Data of joining:</mat-label>
         <input matInput [matDatepicker]="picker1" matInput formControlName="dateOfJoining">
         <mat-hint>MM/DD/YYYY</mat-hint>
@@ -103,12 +103,14 @@
         <mat-datepicker #picker1></mat-datepicker>
     </mat-form-field>
     <br>
-    <!-- <mat-form-field class="example-full-width" appearance="fill">
+    <!-- <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter promotionBand:</mat-label>
         <input type="text" matInput formControlName="promotionBand">
     </mat-form-field> -->
 
+
     <mat-radio-group aria-label="Promotion Band"  matInput formControlName="promotionBand">
+        <mat-label>Promotion Band:</mat-label>
         <mat-radio-button value="A">A</mat-radio-button>
         <mat-radio-button value="B">B</mat-radio-button>
         <mat-radio-button value="C">C</mat-radio-button>
@@ -116,6 +118,7 @@
       </mat-radio-group>
     <br>
     <mat-radio-group aria-label="Mode of work"  matInput formControlName="workingMode">
+        <mat-label>Mode of Work:</mat-label>
         <mat-radio-button value="Work From Office">Work From Office</mat-radio-button>
         <mat-radio-button value="Work From Home">Work From Home</mat-radio-button>
       </mat-radio-group>
@@ -125,9 +128,14 @@
         <form formGroupName="address">
             <table class="example-full-width" cellspacing="0"><tr>
                 <td><mat-form-field class="example-full-width">
+                    <mat-label>Door No</mat-label>
+                    <input matInput placeholder="Ex. 2-A West Street" formControlName="doorNumber">
+                  </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
                     <mat-label>Street</mat-label>
                     <input matInput placeholder="Ex. 2-A West Street" formControlName="street">
                   </mat-form-field></td>
+
                 <td><mat-form-field class="example-full-width">
                   <mat-label>City</mat-label>
                   <input matInput placeholder="Ex. San Francisco" formControlName="city">
@@ -146,17 +154,17 @@
      </div>
    
     <br>
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Branch Location:</mat-label>
         <input type="text" matInput formControlName="branchLocation">
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Project Name:</mat-label>
         <input type="text" matInput formControlName="projectName">
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Assignment Start Date:</mat-label>
         <input matInput [matDatepicker]="picker2" matInput formControlName="assignmentStartDate">
         <mat-hint>MM/DD/YYYY</mat-hint>
@@ -164,7 +172,7 @@
         <mat-datepicker #picker2></mat-datepicker>
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Assignment End Date:</mat-label>
         <input matInput [matDatepicker]="picker4" matInput formControlName="assignmentEndDate">
         <mat-hint>MM/DD/YYYY</mat-hint>

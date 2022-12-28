@@ -35,6 +35,7 @@ export class AddUpdateComponent implements OnInit {
     promotionBand: new FormControl(),
     workingMode: new FormControl(),
     address:new FormGroup({
+      doorNumber:new FormControl(),
       street:new FormControl(),
       city:new FormControl(),
       state:new FormControl(),
@@ -61,8 +62,11 @@ export class AddUpdateComponent implements OnInit {
     this._service.getEmployeeById(this.employeeId).subscribe({
       next:(data)=>{
         this.employeeById=data;
+        this.employeeForm.setValue(data);
       }
     })
+
+
   }
 
   onAddEmployee=(employeeForm:any)=>{
@@ -75,7 +79,7 @@ export class AddUpdateComponent implements OnInit {
   })
   }
 
-  
+
 
   backToHome(){
     this._router.navigate(['/employee-view'])

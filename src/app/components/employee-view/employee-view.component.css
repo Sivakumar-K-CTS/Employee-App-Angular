@@ -16,3 +16,6 @@ table{
   font-weight: bold;
 }
   
+div{
+  overflow: scroll;
+}
