@@ -1,7 +1,23 @@
+
+<div class="main-conatiner">
+
+    <h2 style="text-align: center;">Add Employee</h2>
 <form [formGroup]="employeeForm" (ngSubmit)="onAddEmployee(employeeForm)">
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    
+    <!-- <div *ngIf="validation.employeeId.touched && f.number.invalid" class="alert alert-danger">
+        <div *ngIf="validation.employeeId.errors.required">Number is required.</div>
+        <!-- <div *ngIf="validation.employeeId.errors.pattern">Enter only number.</div> -->
+    
+
     <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Enter Id:</mat-label>
-        <input type="text" matInput formControlName="employeeId">
+        <mat-label>employee Id</mat-label>
+        <input type="text" matInput formControlName="employeeId" required>
     </mat-form-field>
     <br>
     <mat-form-field class="example-full-width" appearance="outline">
@@ -182,4 +198,4 @@
     <button type="submit" mat-raised-button color="primary" >Add</button>
     </form>
     <br>
-<button type="submit" mat-raised-button color="primary" (click)="backToHome()">Back</button>
+</div>

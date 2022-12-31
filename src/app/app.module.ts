@@ -11,6 +11,8 @@ import { EmployeeViewComponent } from './components/employee-view/employee-view.
 import { EmployeeDetailsViewComponent } from './components/employee-details-view/employee-details-view.component';
 import { AddUpdateComponent } from './components/add-update/add-update.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EmployeeGridComponent } from './components/employee-grid/employee-grid.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavBarComponent,
     EmployeeViewComponent,
     EmployeeDetailsViewComponent,
-    AddUpdateComponent
+    AddUpdateComponent,
+    EmployeeGridComponent
   ],
   imports: [
     AuthModule,

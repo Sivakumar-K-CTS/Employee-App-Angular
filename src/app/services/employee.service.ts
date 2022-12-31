@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Employee } from '../model/employee';
 
 type EmployeeResponse={
@@ -38,36 +38,21 @@ export class EmployeeService {
   }
 
   deleteEmployee=(employeeId:string):Observable<any>=>{
-
-
-    
-    // console.log('Inside deleteEmployee in Service');
-    // console.log('URL-----------'+this._baseUrl+"/"+employeeId);
-    // console.log(typeof(this._httpClient.delete<string>(this._baseUrl+"/"+employeeId)));
-    //  console.log(this._baseUrl+"/"+employeeId);
-    // this._httpClient.delete(this._baseUrl+"/"+employeeId).subscribe();
-
     const url:string = `${this._baseUrl}/${employeeId}`;
-    return new Observable((oSearchTemplate)=>{
-      this._httpClient.delete(url, {responseType: 'text'}).subscribe()}) 
-
-
+    return this._httpClient.delete(url, {responseType: 'text'});
   }
 
-  // searchTemplate(parameter: any): Observable<any> {
-  //   const url = config.getServiceBaseURI() + "/search";
-  //   return new Observable((oSearchTemplate) => {
-  //     this.http.post(url, parameter).subscribe({
-  //       next: (response) => {
-  //         oSearchTemplate.next(response);
-  //         oSearchTemplate.complete();
-  //       },
-  //       error: (error) => {
-  //         oSearchTemplate.error(error);
-  //         oSearchTemplate.complete();
-  //       },
-  //     });
-  //   });
-  // }
+  employeeListPagenator(records:number,pageIndex:number){
+    return this._httpClient.get<EmployeeResponse>(this._baseUrl+("/")+pageIndex+("/")+records);
+  }
 
+  employeeSorter(field:string, direction:boolean){
+    return this._httpClient.get<EmployeeResponse>(this._baseUrl+("/sort/")+field+("/")+direction);
+  }
+
+  employeePagingAndSorting(pageIndex:number,records:number, field:string, direction:boolean){
+    return this._httpClient.get<EmployeeResponse>(this._baseUrl+"/pageNo/"+pageIndex+"/pageSize/"+records+"/field/"+field+"/direction/"+direction);
+  }
+
+  
 }

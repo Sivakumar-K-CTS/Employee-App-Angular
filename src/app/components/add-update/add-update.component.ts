@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Address } from 'src/app/model/address';
 import { Employee } from 'src/app/model/employee';
@@ -17,7 +17,7 @@ export class AddUpdateComponent implements OnInit {
   
 
   employeeForm = new FormGroup({
-    employeeId: new FormControl(),
+    employeeId: new FormControl('',[Validators.minLength(1), Validators.maxLength(10),Validators.required,Validators.pattern("^[0-9]*$")]),
     firstName: new FormControl(),
     lastName: new FormControl(),
     gender: new FormControl(),
@@ -51,6 +51,10 @@ export class AddUpdateComponent implements OnInit {
   employeeId:string='';
   employeeById!:Employee;
 
+  get validation(){
+    return this.employeeForm.controls;
+  }
+
 
 
   ngOnInit(): void {
@@ -81,9 +85,7 @@ export class AddUpdateComponent implements OnInit {
 
 
 
-  backToHome(){
-    this._router.navigate(['/employee-view'])
-  }
+  
 
 
 }

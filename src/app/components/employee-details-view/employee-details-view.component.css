@@ -1,0 +1,14 @@
+.bio{
+    border-color: rgb(102, 44, 162);
+    border-radius: 6px;
+    padding-bottom: 20px;
+    width: 950px;
+    margin:auto;
+}
+.legendBio{
+    color: rgb(102, 44, 162);
+    padding-top: 10px;
+}
+td{
+    padding: 6px;
+}

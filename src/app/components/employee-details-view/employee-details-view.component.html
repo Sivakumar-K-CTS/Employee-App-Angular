@@ -1,138 +1,123 @@
-<!-- <form [formGroup]="book">
-    <mat-form-field appearance="fill">
-        <mat-label>Enter Id:</mat-label>
-        <input type="number" matInput formControlName="id">
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter Title:</mat-label>
-        <input type="text" matInput formControlName="title">
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter SubTitle:</mat-label>
-        <input type="text" matInput formControlName="subTitle">
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter author:</mat-label>
-        <input type="text" matInput formControlName="subTitle">
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter OriginalPrice</mat-label>
-        <input type="number" matInput formControlName="OriginalPrice">
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter SellingPrice</mat-label>
-        <input type="number" matInput formControlName="SellingPrice">
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="fill">
-        <mat-label>Category:</mat-label>
-        <mat-select>
-          <mat-option value="one">FICTION</mat-option>
-          <mat-option value="two">NONFICTION</mat-option>
-          <mat-option value="three">NOVEL</mat-option>
-          <mat-option value="four">ROMANCE</mat-option>
-          <mat-option value="five">MYSTERY</mat-option>
-          <mat-option value="six">THRILLER</mat-option>
-          <mat-option value="seven">Love</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <br>
-      <mat-form-field appearance="fill">
-        <mat-label>Type:</mat-label>
-        <mat-select>
-          <mat-option value="one">AUTOBIOGRAPHY</mat-option>
-          <mat-option value="two">BIOGRAPHY</mat-option>
-          <mat-option value="three">ESSAYS</mat-option>
-          <mat-option value="four">SELFHELP</mat-option>
-          <mat-option value="five">CHILDRENSBOOKS</mat-option>
-          <mat-option value="six">WAR</mat-option>
-          <mat-option value="seven">TEXTBOOKS</mat-option>
-          <mat-option value="eight">POLITICALBOOK</mat-option>
-          <mat-option value="nine">ACADAMICBOOKS</mat-option>
-          <mat-option value="ten">POETRYBOOKS</mat-option>
-          <mat-option value="eleven">COOKBOOKS</mat-option>
-          <mat-option value="twelve">HISTORYBOOKS</mat-option>
-          <mat-option value="thirteen">ARTBOOKS</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <br>
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter Rating:</mat-label>
-        <input type="number" matInput formControlName="rating">
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter Discount:</mat-label>
-        <input type="number" matInput formControlName="discount">
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter PaparQuality:</mat-label>
-        <input type="number" matInput formControlName="paperQuality">
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter BookSize:</mat-label>
-        <input type="number" matInput formControlName="bookSize">
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter Language:</mat-label>
-        <input type="text" matInput formControlName="language">
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter Editor:</mat-label>
-        <input type="text" matInput formControlName="editor">
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter Publisher:</mat-label>
-        <input type="text" matInput formControlName="publisher">
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter Edition</mat-label>
-        <input type="number" matInput formControlName="edition">
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Publish date:</mat-label>
-        <input matInput [matDatepicker]="picker">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Manufacture date:</mat-label>
-        <input matInput [matDatepicker]="picker">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Enter pages:</mat-label>
-        <input type="number" matInput formControlName="pages">
-    </mat-form-field>
-    </form>-->
-
-    <!-- <ul [ngStyle]="{'list-style-type':'none'}" >
-        <li  *ngFor = "let employee of employeeResponse" >
-            {{employee.employeeId}}<br>
+<fieldset class="bio">
+    <legend class="legendBio"><h2>BIO</h2></legend>
+    <table style="border: 2px;">
+        <tr>
+            <td><b>Employee Id :</b>    {{employee.employeeId}}</td>
+            <td> </td>
+            <td> </td>
+            <td><b>First Name  : </b>{{employee.firstName}}</td>
+            <td> </td>
+            <td> </td>
+            <td><b>Last Name   :</b>  {{employee.lastName}}</td>
+            <td> </td>
+            <td> </td>
+            <td><b>Gender  :</b> {{employee.gender}}</td>
+        </tr>
+       
+        <tr>
             
-        </li>
-    </ul> -->
-    
-   <table>
-    <tr>
-        <td>Employee Id:</td>
-        <td>{{employee.employeeId}}</td>
-    </tr>
-   </table>
+            <td><b>Date Of Birth   :</b>   {{employee.dateOfBirth | date: 'MM/dd/YYYY'}}</td>
+            <td> </td>
+            <td> </td>
+            <td><b>Mobile  :</b>   {{employee.mobile}}</td>
+            <td> </td>
+            <td> </td>
+            <td><b>Email   :</b>  {{employee.email}}</td>
+        </tr>
+        
+    </table>
+</fieldset>
+<br>
+<fieldset class="bio">
+    <legend class="legendBio"><h2>ADDRESS</h2></legend>
+    <table style="border: 2px;">
+        <tr>
+            <td><b>Door Number :</b>    {{employee.address.doorNumber}}</td>
+            <td> </td>
+            <td> </td>
+            <td><b>Street  : </b>{{employee.address.street}}</td>
+            <td> </td>
+            <td> </td>
+            <td><b>City   :</b>  {{employee.address.city}}</td>
+        </tr>
+       
+        <tr>
+            
+            <td><b>State   :</b>   {{employee.address.state}}</td>
+            <td> </td>
+            <td> </td>
+            <td><b>Pincode  :</b>   {{employee.address.pincode}}</td>
+
+        </tr>
+        
+    </table>
+</fieldset>
+
+<br>
+
+<fieldset class="bio">
+    <legend class="legendBio"><h2>EMPLOYMENT DETAIILS</h2></legend>
+    <table style="border: 2px;">
+        <tr>
+            <td><b>Designation :</b>    {{employee.designation}}</td>
+            <td> </td>
+            <td> </td>
+            <td><b>Role  : </b>{{employee.role}}</td>
+            <td> </td>
+            <td> </td>
+            <td><b>Department  :</b>  {{employee.department}}</td>
+            <td> </td>
+            <td> </td>
+            <td><b>Experience   :</b>   {{employee.experience}}</td>
+        </tr>
+       
+        <tr>
+            
+            <td><b>promotion Band  :</b>   {{employee.promotionBand}}</td>
+            <td> </td>
+            <td> </td>
+            <td><b>Salary Per Anum  :</b>   {{employee.salary}}</td>
+            <td> </td>
+            <td> </td>
+            <td><b>Date Of Joining  :</b>   {{employee.dateOfJoining | date: 'MM/dd/YYYY'}}</td>
+            <td> </td>
+            <td> </td>
+            <td><b>Branch Location  :</b>   {{employee.branchLocation}}</td>
+        
+        </tr>
+        <tr>
+            
+            <td><b>Reporting Officer Name   :</b>   {{employee.reportingOfficerName}}</td>
+            <td> </td>
+            <td> </td>
+            <td><b>Reporting Officer ID   :</b>   {{employee.reportingOfficerId}}</td>
+        
+        </tr>
+        
+    </table>
+</fieldset>
+<br>
+<fieldset class="bio">
+    <legend class="legendBio"><h2>PROJECT DETALS</h2></legend>
+    <table style="border: 2px;">
+        <tr>
+            <td><b>Project Name:</b>    {{employee.projectName}}</td>
+            <td> </td>
+            <td> </td>
+            <td><b>Working Mode: </b>{{employee.workingMode}}</td>
+        </tr>
+       
+        <tr>
+            
+            <td><b>Assignment Start Date:</b>   {{employee.assignmentStartDate | date: 'MM/dd/YYYY'}}</td>
+            <td> </td>
+            <td> </td>
+            <td><b>Assignment End Date:</b>   {{employee.assignmentStartDate | date: 'MM/dd/YYYY'}}</td>
+
+        </tr>
+        
+    </table>
+</fieldset>
+<br>
+
+<p style="margin: auto;">`</p>

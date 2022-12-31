@@ -1,130 +1,137 @@
-<h3>List of Employee</h3>
 <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="addEmployee()">person_add</mat-icon>
-  
-  
-  
-  
-  
 
-<button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+<button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="viewChooser()">
   <mat-icon>border_all</mat-icon>
 </button>
-<div>
+
+
+<mat-form-field appearance="fill" style="float: right;">
+  <mat-select required multiple (selectionChange)="onSelect($event)">
+    <mat-option>-- None --</mat-option>
+      <mat-option [value]="column" *ngFor="let column of choosedColumn">{{column}}</mat-option>
+    </mat-select>
+  <mat-label>Select Fields</mat-label>
+</mat-form-field>
+
+<br>`<br><br>
+
+<div *ngIf="viewModifier==1" class="tableView">
 <table mat-table [dataSource]="employeeList" class="mat-elevation-z8">
  
   <ng-container matColumnDef="employeeId" > -->
-    <th mat-header-cell *matHeaderCellDef>Employee ID</th>
+    <th mat-header-cell *matHeaderCellDef >ID <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('employeeId')">swap_vert</mat-icon>
+     </th>
     <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.employeeId}}</td>
   </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="firstName">
-    <th mat-header-cell *matHeaderCellDef> First Name </th>
+    <th mat-header-cell *matHeaderCellDef> First Name <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('firstName')">swap_vert</mat-icon> </th>
     <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.firstName}} </td>
   </ng-container>
 
 
   <ng-container matColumnDef="lastName">
-    <th mat-header-cell *matHeaderCellDef> Last Name </th>
+    <th mat-header-cell *matHeaderCellDef> Last Name <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('lastName')">swap_vert</mat-icon></th>
     <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.lastName}} </td>
   </ng-container>
 
   <ng-container matColumnDef="gender">
-    <th mat-header-cell *matHeaderCellDef> Gender </th>
+    <th mat-header-cell *matHeaderCellDef> Gender <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('gender')">swap_vert</mat-icon></th>
     <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.gender}} </td>
   </ng-container>
 
   <ng-container matColumnDef="dateOfBirth">
-    <th mat-header-cell *matHeaderCellDef> DateOfBirth </th>
-    <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.dateOfBirth}} </td>
+    <th mat-header-cell *matHeaderCellDef> DateOfBirth <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('dateOfBirth')">swap_vert</mat-icon></th>
+    <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.dateOfBirth | date: 'MM/dd/YYYY'}} </td>
   </ng-container>
 
   <ng-container matColumnDef="mobile">
-    <th mat-header-cell *matHeaderCellDef> Mobile </th>
+    <th mat-header-cell *matHeaderCellDef> Mobile <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('mobile')">swap_vert</mat-icon></th>
     <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.mobile}} </td>
   </ng-container>
 
   <ng-container matColumnDef="email">
-    <th mat-header-cell *matHeaderCellDef> Email </th>
+    <th mat-header-cell *matHeaderCellDef> Email <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('email')">swap_vert</mat-icon></th>
     <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.email}} </td>
   </ng-container>
 
   <ng-container matColumnDef="designation">
-    <th mat-header-cell *matHeaderCellDef> Designation </th>
+    <th mat-header-cell *matHeaderCellDef> Designation <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('designation')">swap_vert</mat-icon></th>
     <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.designation}} </td>
   </ng-container>
 
   <ng-container matColumnDef="role">
-    <th mat-header-cell *matHeaderCellDef> Role </th>
+    <th mat-header-cell *matHeaderCellDef> Role <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('role')">swap_vert</mat-icon></th>
     <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.role}} </td>
   </ng-container>
 
   <ng-container matColumnDef="department">
-    <th mat-header-cell *matHeaderCellDef> department </th>
+    <th mat-header-cell *matHeaderCellDef> department <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('department')">swap_vert</mat-icon></th>
     <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.department}} </td>
   </ng-container>
 
   <ng-container matColumnDef="reportingOfficerName">
-    <th mat-header-cell *matHeaderCellDef> reportingOfficerName </th>
+    <th mat-header-cell *matHeaderCellDef> reportingOfficerName <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('reportingOfficerName')">swap_vert</mat-icon></th>
     <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.reportingOfficerName}} </td>
   </ng-container>
 
   
 	<ng-container matColumnDef="reportingOfficerId">
-        <th mat-header-cell *matHeaderCellDef> reportingOfficerId </th>
+        <th mat-header-cell *matHeaderCellDef> reportingOfficerId <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('reportingOfficerId')">swap_vert</mat-icon></th>
         <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.reportingOfficerId}} </td>
       </ng-container>
 
     
 	<ng-container matColumnDef="experience">
-        <th mat-header-cell *matHeaderCellDef> experience </th>
+        <th mat-header-cell *matHeaderCellDef> experience <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('experience')">swap_vert</mat-icon></th>
         <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.experience}} </td>
       </ng-container>
 
       <ng-container matColumnDef="salary">
-        <th mat-header-cell *matHeaderCellDef> salary </th>
+        <th mat-header-cell *matHeaderCellDef> salary <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('salary')">swap_vert</mat-icon></th>
         <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.salary}} </td>
       </ng-container>
 
       <ng-container matColumnDef="dateOfJoining">
-        <th mat-header-cell *matHeaderCellDef> dateOfJoining </th>
-        <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.dateOfJoining}} </td>
+        <th mat-header-cell *matHeaderCellDef> dateOfJoining <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('dateOfJoining')">swap_vert</mat-icon></th>
+        <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.dateOfJoining  | date: 'MM/dd/YYYY'}} </td>
       </ng-container>
 
       <ng-container matColumnDef="promotionBand">
-        <th mat-header-cell *matHeaderCellDef> promotionBand </th>
+        <th mat-header-cell *matHeaderCellDef> promotionBand <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('promotionBand')">swap_vert</mat-icon></th>
         <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.promotionBand}} </td>
       </ng-container>
 
       
       <ng-container matColumnDef="workingMode">
-        <th mat-header-cell *matHeaderCellDef> workingMode </th>
+        <th mat-header-cell *matHeaderCellDef> workingMode <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('workingMode')">swap_vert</mat-icon></th>
         <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.workingMode}} </td>
       </ng-container>
 
       <ng-container matColumnDef="address">
-        <th mat-header-cell *matHeaderCellDef> address </th>
+        <th mat-header-cell *matHeaderCellDef> address <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('address')">swap_vert</mat-icon></th>
         <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.address}} </td>
       </ng-container>
 
       <ng-container matColumnDef="branchLocation">
-        <th mat-header-cell *matHeaderCellDef> branchLocation </th>
+        <th mat-header-cell *matHeaderCellDef> branchLocation <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('branchLocation')">swap_vert</mat-icon></th>
         <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.branchLocation}} </td>
       </ng-container>
 
       <ng-container matColumnDef="projectName">
-        <th mat-header-cell *matHeaderCellDef> projectName </th>
+        <th mat-header-cell *matHeaderCellDef> projectName <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('projectName')">swap_vert</mat-icon></th>
         <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.projectName}} </td>
       </ng-container>
 
       <ng-container matColumnDef="assignmentStartDate">
-        <th mat-header-cell *matHeaderCellDef> assignmentStartDate</th>
-        <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.assignmentStartDate}} </td>
+        <th mat-header-cell *matHeaderCellDef> assignmentStartDate <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('assignmentStartDate')">swap_vert</mat-icon></th>
+        <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.assignmentStartDate | date: 'MM/dd/YYYY'}} </td>
       </ng-container>
 
       <ng-container matColumnDef="assignmentEndDate">
-        <th mat-header-cell *matHeaderCellDef> assignmentEndDate</th>
-        <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.assignmentEndDate}} </td>
+        <th mat-header-cell *matHeaderCellDef> assignmentEndDate <br><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sort('assignmentEndDate')">swap_vert</mat-icon></th>
+        <td mat-cell *matCellDef="let element" (click)="showDetails(element)"> {{element.assignmentEndDate  | date: 'MM/dd/YYYY'}} </td>
       </ng-container>
 
       <ng-container matColumnDef="edit">
@@ -141,15 +148,48 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
 </table>
+<mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[1,5, 10, 25, 100]"
+              aria-label="Select page"
+              (page)="pagination($event)">
+</mat-paginator>
+
 </div>
-<ul >
-  <li  *ngFor = "let employee of employeeList" [ngStyle]="{'float':'left','width':'250px', 'text-align':'center'}" >
-     
-      {{employee.employeeId}}<br>
-      {{employee.firstName}}<br>
-     
-  </li>
-</ul>
+
+<div *ngIf="viewModifier==0">
+  <div class="content">
+    <div fxLayout="row wrap" fxLayoutGap="-100px grid">
+      <div fxFlex.xs="100%"   fxFlex.sm="33%"  *ngFor="let employee of employeeList" >
+        <mat-card class="mat-elevation-z4" style="float:left;width: 300px; border-style: solid;border-radius: 15px; border-width: 1px;flex: 50px;" (click)="showDetails(employee)">
+          <mat-card-header>
+            <mat-card-title><h2>ID : {{employee.employeeId}}</h2></mat-card-title>
+          </mat-card-header>
+          <span><h2>Name :    {{employee.firstName}}.{{employee.lastName}}</h2></span>
+          
+          <mat-card-content>
+            <span>
+              Designation: {{employee.designation}}<br>
+              Role: {{employee.role}}<br>
+              Email: {{employee.email}}<br>
+              Mobile: {{employee.mobile}}<br>
+              <br><br>
+              Click the Card to view more
+            </span>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    </div>
+    <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[1,5, 10, 25, 100]"
+              aria-label="Select page"
+              (page)="pagination($event)">
+</mat-paginator>
+</div>
+
+
 
 
 

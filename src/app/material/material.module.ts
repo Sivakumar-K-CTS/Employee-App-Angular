@@ -14,6 +14,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatGridListModule} from '@angular/material/grid-list';
+
+
 
 
 
@@ -28,6 +31,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatToolbarModule,
     MatIconModule,
     MatTabsModule,
+    MatGridListModule,
     MatInputModule,
     MatFormFieldModule,
     MatTableModule,
@@ -52,6 +56,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatPaginatorModule ,
     MatOptionModule,
     MatDatepickerModule,
+    MatGridListModule,
     MatRadioModule,
     MatSelectModule
   ]

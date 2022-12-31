@@ -1,0 +1,23 @@
+<div class="content">
+    <div fxLayout="row" fxLayoutGap="16px grid">
+      <div fxFlex="25%" fxFlex.xs="100%"   fxFlex.sm="33%"  *ngFor="let employee of employeeList" >
+        <mat-card class="mat-elevation-z4" style="margin-left: 20px; margin-bottom: 20px; float:left;width: 300px; border-style: solid;border-radius: 15px; border-width: 2px;flex: 50px;" (click)="showDetails(employee)">
+          <mat-card-header>
+            <mat-card-title style="margin-left: 15px;"><h2>ID : {{employee.employeeId}}</h2></mat-card-title>
+          </mat-card-header>
+          <span style="margin-left: 30px;"><h2>Name :    {{employee.firstName}}.{{employee.lastName}}</h2></span>
+          
+          <mat-card-content>
+            <span>
+              Designation: {{employee.designation}}<br>
+              Role: {{employee.role}}<br>
+              Email: {{employee.email}}<br>
+              Mobile: {{employee.mobile}}<br>
+              <br><br>
+              Click the Card to view more
+            </span>
+          </mat-card-content>
+        </mat-card>
+        <!-- <span style="float: left; display: inline;">.   .   .</span> -->
+      </div>
+    </div>

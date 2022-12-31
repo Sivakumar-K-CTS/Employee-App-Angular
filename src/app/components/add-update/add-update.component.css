@@ -1,0 +1,13 @@
+.main-conatiner{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: red 1px solid; */
+}
+form{
+    display:flex;
+    flex-direction: column;
+    justify-content: ;
+    align-items: center;
+}

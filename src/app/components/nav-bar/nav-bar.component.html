@@ -1,17 +1,23 @@
-
-  <mat-toolbar color="primary">
-    <button (click)="onClick()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>logout</mat-icon>
+<mat-toolbar>
+   
+    
+    
+    <button (click)="backToHome()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>home</mat-icon>
     </button>
-    <span class="example-spacer"></span>
+
+    <!-- <span class="example-spacer"></span> -->
+    <span>Employee Details</span>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="viewChooser()">
+      <mat-icon>border_all</mat-icon>
+    </button>
     
     <span class="example-spacer"></span>
-    <span>Employee Details</span>
-    <span class="example-spacer"></span>
    
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>person</mat-icon>
-      </button>
 
-  </mat-toolbar>
+     
+        <mat-icon class="logout" (click)="onClick()" style="float: right;">logout</mat-icon>
+
+  
+      </mat-toolbar>
 
